@@ -1,0 +1,22 @@
+{
+  // mysql 설정값
+  "mysql": {
+    "host"     : "localhost",
+    "port"     : 3306,
+    "user"     : "db login ID",
+    "password" : "password",
+    "database" : "database Name"
+  },
+  // session 관련 설정값
+  "session": {
+    "secret": "여기에 암호화 할 값을 넣습니다.",
+    "cookie": {
+      // 유지시간 ms 값 넣어준다.
+      "maxAge" : 3600000
+    }
+  },
+  // 기타
+  "etc": {
+    salt : "계정 암호화 할때 사용 하는 값"
+  }
+}

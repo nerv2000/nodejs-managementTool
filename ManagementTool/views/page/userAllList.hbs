@@ -1,0 +1,61 @@
+<!-- DataTables Example -->
+<div class="card mb-2">
+  <div class="card-header">
+    <i class="fas fa-table"></i>
+    유저 전체 목록
+  </div>
+  
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <!-- 간격 조정용 -->
+        <colgroup>
+          <col width="14%" />
+          <col width="*" />
+          <col width="20%" />
+        </colgroup>
+        <!-- 상단 메뉴 -->
+        <thead>
+          <tr>
+            <th>유저번호(userNo)</th>
+            <th>닉네임(nickName)</th>
+            <th>유저레벨(userLv)</th>
+          </tr>
+        </thead>
+        <!-- 데이터 부분 -->
+        <tbody>
+          {{#tableDatas}}
+          <tr>
+            <td>{{userNo}}</td>
+            <td>{{nickName}}</td>
+            <td>{{userLv}}</td>
+          </tr>
+          {{/tableDatas}}
+        </tbody>
+      </table>
+    </div>
+    <!--페이지 번호 -->
+    <ul class="pagination" style="float:right">
+      {{#pageInfo}}
+      <!--처음-->
+      <li class="page-item{{#ifCond prevPage '==' 0}} disabled{{/ifCond}}">
+        <a class="page-link" href="/user/list/{{prevPage}}" tabindex="-1">이전</a>
+      </li>
+
+      <!--중간-->
+      {{#each pageArray}}
+      <li class="page-item {{#ifCond ../currentPage '==' this}} active{{/ifCond}}">
+        <a class="page-link" href="/user/list/{{this}}">{{this}}</a>
+      </li>
+      {{/each}}
+
+      <!--끝-->
+      <li class="page-item{{#ifCond nextPage '==' currentPage}} disabled{{/ifCond}}">
+        <a class="page-link" href="/user/list/{{nextPage}}">다음</a>
+      </li>
+
+      {{/pageInfo}}
+    </ul>
+  </div>
+  <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+</div>
