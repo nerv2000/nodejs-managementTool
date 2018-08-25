@@ -16,7 +16,7 @@ node.js에서는 알아야 할것들은 다음과 같습니다
 - session-file-store
 - async
 - crypto-js
-- hbs (handlebars) - html templete 라이브러리
+- hbs ([handlebars](https://handlebarsjs.com/)) - html templete 라이브러리
 - [startbootstrap-sb-admin](https://startbootstrap.com/template-overviews/sb-admin/) - bootstrap 대쉬보드 라이브러리
 - 뭐 나머지는 생활코딩 강좌에서 배운거라 그것을 참고를..
 
